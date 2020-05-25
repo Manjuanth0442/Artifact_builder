@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.i3s.rhel.artifact</groupId>
+  <artifactId>Rhel-Artifact</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Rhel Artifact</name>
+
+
+	<build>
+ 
+    <plugins>
+    
+   <plugin>
+           <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                <excludeDefaultDirectories>true</excludeDefaultDirectories>
+                    <filesets>
+                        <fileset>
+                            <directory>target/js</directory>
+                                                         
+                        </fileset>
+                           <fileset>
+                            <directory>target/pls/</directory>
+                                                          
+                        </fileset>
+                        <fileset>
+                            <directory>target</directory>
+                              <includes>
+                                <include>**/*</include>
+                            </includes>                            
+                        </fileset>
+                          </filesets>
+                </configuration>
+            </plugin>
+   
+    <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<execution>
+						<configuration>
+							<executable>python</executable>
+							<workingDirectory>../Artifact-Builder/src/main/</workingDirectory>
+							<arguments>
+								<argument>planscript_JSON_converter.py</argument>
+							</arguments>
+							<outputDirectory>./</outputDirectory>
+						</configuration>
+						<id>python_build</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+				 </plugins>
+            </build>
+	
+</project>
+

@@ -1,0 +1,5 @@
+Artifact Bundle:../../../Rhel-Artifact/target/HPE-RHEL-Sample-Artifact
+Description:description
+Read Only:False
+Time Stamp:2020-05-25T09:12:03.128991Z
+Artifact Type: User

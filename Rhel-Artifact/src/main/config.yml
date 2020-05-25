@@ -1,0 +1,69 @@
+artifact_bundle:
+  name: ../../../Rhel-Artifact/target/HPE-RHEL-Sample-Artifact
+  description: description
+  read_only: false
+  
+plan_scripts:
+  - name: HPE-RHEL-Users
+    description: "Sets root password and creates Users"
+    copyright: ""
+    type: "deploy"
+    sources:
+      - source: "../../../Rhel-Artifact/src/main/scripts/users.sh"
+        
+  - name: HPE-RHEL-Network
+    description: "Configures Multi NIC's"
+    copyright: ""
+    type: "deploy"
+    sources:
+      - source: "../../../Rhel-Artifact/src/main/scripts/Mgmt-Teaming.sh"
+         
+  - name: HPE-RHEL-Host
+    description: "Configures Hostname"
+    copyright: ""
+    type: "deploy"
+    sources:
+      - source: "../../../Rhel-Artifact/src/main/scripts/hostname.sh"
+        
+  - name: HPE-RHEL-ssh
+    description: "Enables/Disables SSH and Enables Selinux Security"
+    copyright: ""
+    type: "deploy"
+    sources:
+      - source: "../../../Rhel-Artifact/src/main/scripts/ssh.sh"
+               
+  - name: HPE-RHEL-wrapper
+    description: "Wrapper Script which executes all other scripts"
+    copyright: ""
+    type: "deploy"
+    sources:
+      - source: "../../../Rhel-Artifact/src/main/scripts/wrapper.sh"
+         
+  - name: HPE-RHEL-mount
+    description: "mount script"
+    copyright: ""
+    type: "deploy"
+    sources:
+      - source: "../../../Rhel-Artifact/src/main/scripts/mount.sh"
+         
+  - name: HPE-RHEL-unmount
+    description: "unmount script"
+    copyright: ""
+    type: "deploy"
+    sources:
+      - source: "../../../Rhel-Artifact/src/main/scripts/unmount.sh"
+          
+  - name: HPE-RHEL-LVM
+    description: "LVM script"
+    copyright: ""
+    type: "deploy"
+    sources:
+      - source: "../../../Rhel-Artifact/src/main/scripts/LVM.sh"
+          
+  - name: HPE-RHEL-deploy-teaming
+    description: "Deploy Nic Teaming script"
+    copyright: ""
+    type: "deploy"
+    sources:
+      - source: "../../../Rhel-Artifact/src/main/scripts/deploy-team.sh"
+                 
