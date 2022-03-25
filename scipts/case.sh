@@ -26,5 +26,5 @@ while getopts ${optstring} arg; do
 		esac
 done
 
-
+###GETOPTS starts from 1 goes till end of arugment
 
